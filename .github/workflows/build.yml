@@ -22,7 +22,7 @@ jobs:
       - name: Clean previous generated sources
         run: |
           echo "Cleaning generated-sources..."
-          rm -rf target/generated-sources
+          rm -rf src/generated-sources
 
       - name: Generate Java classes from .proto files
         run: |
@@ -32,4 +32,4 @@ jobs:
       - name: Verify generated files
         run: |
           echo "Generated sources:"
-          find target/generated-sources -type f
+          find src/generated-sources -type f
