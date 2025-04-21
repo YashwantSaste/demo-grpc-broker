@@ -1,0 +1,33 @@
+name: Java SDK Build
+
+on:
+  push:
+    paths:
+      - 'src/main/proto/**'
+      - 'pom.xml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v3
+
+      # Set up JDK (Java version 17 with Temurin distribution)
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Clean up existing generated sources before building
+      - name: Clean generated sources
+        run: |
+          echo "Cleaning up existing generated sources..."
+          rm -rf src/generated-sources/protobuf
+          echo "Clean up complete."
+
+      # Build the project to regenerate sources from proto files
+      - name: Build Java SDK
+        run: mvn clean install
