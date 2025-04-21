@@ -11,25 +11,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: 🔄 Checkout Repository
+        uses: actions/checkout@v3
 
-      - name: Set up JDK
+      - name: ☕ Set up Java 17 (Temurin)
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Clean previous generated sources
+      - name: 🧹 Delete Old Generated Sources
         run: |
-          echo "Cleaning generated-sources..."
-          rm -rf src/generated-sources
+          echo "Deleting existing generated Java classes from src/main/java/com/example/grpc"
+          rm -rf src/main/java/com/example/grpc/*
+          echo "Old generated sources deleted."
 
-      - name: Generate Java classes from .proto files
+      - name: ⚙️ Run Maven Build to Generate Sources
         run: |
-          echo "Running Maven clean compile to regenerate sources..."
+          echo "Starting Maven build..."
           mvn clean compile
+          echo "Maven build completed. Java classes should now be regenerated from proto files."
 
-      - name: Verify generated files
+      - name: 📦 Commit & Push Generated Java Files
         run: |
-          echo "Generated sources:"
-          find src/generated-sources -type f
+          echo "Setting up git config..."
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          echo "Adding newly generated Java files..."
+          git add src/main/java
+          echo "Committing changes..."
+          git commit -m "Auto-generate Java classes from proto files" || echo "No changes to commit"
+          echo "Pushing to main branch..."
+          git push
+          echo "✅ Changes pushed successfully (if any)."
