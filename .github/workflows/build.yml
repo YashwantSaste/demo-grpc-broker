@@ -13,23 +13,34 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up JDK
+      - name: 🛠️ Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Clean previous generated sources
+      - name: 🧹 Delete previously generated sources
         run: |
-          echo "Cleaning generated-sources..."
-          rm -rf src/generated-sources
+          echo "Deleting old src/generated folder..."
+          rm -rf src/generated || echo "No existing generated folder found."
+          echo "Deleted (if existed)."
 
-      - name: Generate Java classes from .proto files
+      - name: ⚙️ Run Maven to generate sources
         run: |
-          echo "Running Maven clean compile to regenerate sources..."
+          echo "Running 'mvn clean compile' to regenerate proto classes..."
           mvn clean compile
+          echo "Compilation done."
 
-      - name: Verify generated files
+      - name: 📂 Show folder structure of generated sources
         run: |
-          echo "Generated sources:"
-          find src/generated-sources -type f
+          echo "Listing generated files in src/generated:"
+          find src/generated || echo "No files found in src/generated."
+
+      - name: 📖 Print contents of generated .java files (first 20 lines each)
+        run: |
+          echo "Reading generated .java files (showing first 20 lines per file):"
+          for file in $(find src/generated -name "*.java"); do
+            echo "----- $file -----"
+            head -n 20 "$file"
+            echo
+          done
