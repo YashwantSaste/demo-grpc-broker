@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package telemetry;
+
+import "brokered_message.proto"; // adjust the path as needed
+
+option java_package = "com.example.grpc";
+option java_multiple_files = true;
+
+message UserTelemetryRequest {
+  optional bool userProductExcellenceTelemetryOptIn = 1;
+  optional bool userDigitalProductTelemetryOptIn = 2;
+}
+
+message UserTelemetryResponse {
+  broker.BrokeredBaseResponse baseResponse = 1;
+  optional bool userProductExcellenceTelemetryOptIn = 2;
+  optional bool userDigitalProductTelemetryOptIn = 3;
+}
