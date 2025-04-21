@@ -1,6 +1,5 @@
 package com.example.grpc;
 
-import com.example.grpc.BrokeredBaseCommand;
 import io.grpc.*;
 import io.grpc.stub.StreamObserver;
 
@@ -8,13 +7,13 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        BrokeredBaseCommand command = BrokeredBaseCommand.newBuilder()
-                .setLocale("gkgjkgjkg")
-                .setTcSessionId("dkfvjshdfsdkjf")
-                .setCurrentContextActionId("sd,fgksdfgdfgdsflgsd")
-                .build();
-
-        System.out.println(command.toString());
+//        BrokeredBaseCommand command = BrokeredBaseCommand.newBuilder()
+//                .setLocale("gkgjkgjkg")
+//                .setTcSessionId("dkfvjshdfsdkjf")
+//                .setCurrentContextActionId("sd,fgksdfgdfgdsflgsd")
+//                .build();
+//
+//        System.out.println(command.toString());
 
         // Start the gRPC server
         Server server = ServerBuilder.forPort(50051)
