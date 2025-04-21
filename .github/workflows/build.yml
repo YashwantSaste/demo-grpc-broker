@@ -11,25 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
       - uses: actions/checkout@v3
 
-      # Set up JDK (Java version 17 with Temurin distribution)
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # Clean up existing generated sources before building
-      - name: Clean generated sources
+      - name: Clean previous generated sources
         run: |
-          echo "Cleaning up existing generated sources..."
-          rm -rf src/generated-sources/protobuf
-          echo "Clean up complete."
+          echo "Cleaning generated-sources..."
+          rm -rf target/generated-sources
 
-      # Build the project to regenerate sources from proto files
-      - name: Build Java SDK
+      - name: Generate Java classes from .proto files
         run: |
-          echo "Running mvn clean install..."
-          mvn clean install
+          echo "Running Maven clean compile to regenerate sources..."
+          mvn clean compile
+
+      - name: Verify generated files
+        run: |
+          echo "Generated sources:"
+          find target/generated-sources -type f
