@@ -1,7 +1,9 @@
 package com.example.grpc;
 
+import com.example.grpc.BrokeredBaseCommand;
 import io.grpc.*;
 import io.grpc.stub.StreamObserver;
+import com.example.grpc.*;
 
 public class App {
 
@@ -14,6 +16,13 @@ public class App {
 //                .build();
 //
 //        System.out.println(command.toString());
+
+        BrokeredBaseCommand baseCommand = BrokeredBaseCommand.newBuilder()
+                .setCurrentContextActionId("dlsfkszfcdsfdfsdffjsldf")
+                .setLocale("en-US")
+                .build();
+
+        System.out.println(baseCommand);
 
         // Start the gRPC server
         Server server = ServerBuilder.forPort(50051)

@@ -9,9 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
 
       - name: 🛠️ Set up JDK
         uses: actions/setup-java@v3
@@ -23,24 +26,30 @@ jobs:
         run: |
           echo "Deleting old src/generated folder..."
           rm -rf src/generated || echo "No existing generated folder found."
-          echo "Deleted (if existed)."
 
       - name: ⚙️ Run Maven to generate sources
         run: |
           echo "Running 'mvn clean compile' to regenerate proto classes..."
           mvn clean compile
-          echo "Compilation done."
 
-      - name: 📂 Show folder structure of generated sources
+      - name: 🔁 Replace generated sources in src/
         run: |
-          echo "Listing generated files in src/generated:"
-          find src/generated || echo "No files found in src/generated."
+          echo "Copying generated sources..."
+          mkdir -p src/generated
+          cp -r target/generated-sources/* src/generated/
+          echo "Copied to src/generated."
 
-      - name: 📖 Print contents of generated .java files (first 20 lines each)
+      - name: ✅ Commit and push changes
+        env:
+          REPO_PAT: ${{ secrets.REPO_PAT }}
         run: |
-          echo "Reading generated .java files (showing first 20 lines per file):"
-          for file in $(find src/generated -name "*.java"); do
-            echo "----- $file -----"
-            head -n 20 "$file"
-            echo
-          done
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if [ -n "$(git status --porcelain src/generated)" ]; then
+            echo "Changes detected in src/generated, committing..."
+            git add src/generated
+            git commit -m "Update generated sources from proto files"
+            git push https://x-access-token:$REPO_PAT@github.com/${{ github.repository }}.git
+          else
+            echo "No changes to commit."
