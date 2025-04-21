@@ -30,4 +30,6 @@ jobs:
 
       # Build the project to regenerate sources from proto files
       - name: Build Java SDK
-        run: mvn clean install
+        run: |
+          echo "Running mvn clean install..."
+          mvn clean install
