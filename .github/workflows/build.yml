@@ -9,47 +9,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: 🛠️ Set up JDK
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 🧹 Delete previously generated sources
+      - name: Clean previous generated sources
         run: |
-          echo "Deleting old src/generated folder..."
-          rm -rf src/generated || echo "No existing generated folder found."
+          echo "Cleaning generated-sources..."
+          rm -rf target/generated-sources
 
-      - name: ⚙️ Run Maven to generate sources
+      - name: Generate Java classes from .proto files
         run: |
-          echo "Running 'mvn clean compile' to regenerate proto classes..."
+          echo "Running Maven clean compile to regenerate sources..."
           mvn clean compile
 
-      - name: 🔁 Replace generated sources in src/
+      - name: Verify generated files
         run: |
-          echo "Copying generated sources..."
-          mkdir -p src/generated
-          cp -r target/generated-sources/* src/generated/
-          echo "Copied to src/generated."
-
-      - name: ✅ Commit and push changes
-        env:
-          REPO_PAT: ${{ secrets.REPO_PAT }}
-        run: |
-          git config user.name "YashwantSaste"
-          git config user.email "2021bec122@sggs.ac.in"
-
-          if [ -n "$(git status --porcelain src/generated)" ]; then
-            echo "Changes detected in src/generated, committing..."
-            git add src/generated
-            git commit -m "Update generated sources from proto files"
-            git push https://x-access-token:$REPO_PAT@github.com/${{ github.repository }}.git
-          else
-            echo "No changes to commit."
+          echo "Generated sources:"
+          find target/generated-sources -type f

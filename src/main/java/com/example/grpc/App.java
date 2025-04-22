@@ -1,6 +1,7 @@
 package com.example.grpc;
 
 import com.example.grpc.BrokeredBaseCommand;
+import com.example.grpc.UserSession;
 import io.grpc.*;
 import io.grpc.stub.StreamObserver;
 import com.example.grpc.*;
