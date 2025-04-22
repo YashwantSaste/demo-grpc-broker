@@ -27,7 +27,7 @@ jobs:
       - name: Generate Java classes from .proto files
         run: |
           echo "Running Maven clean compile to regenerate sources..."
-          mvn clean compile
+          mvn clean compile package
 
       - name: Verify generated files
         run: |
