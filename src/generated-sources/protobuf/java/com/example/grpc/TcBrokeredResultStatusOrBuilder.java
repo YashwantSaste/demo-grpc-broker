@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.1
 package com.example.grpc;
 
-public interface BrokeredResultStatusOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:broker.BrokeredResultStatus)
+public interface TcBrokeredResultStatusOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:broker.TcBrokeredResultStatus)
     com.google.protobuf.MessageOrBuilder {
 
   /**

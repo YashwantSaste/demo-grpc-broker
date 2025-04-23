@@ -9,18 +9,18 @@ package com.example.grpc;
  * Status model
  * </pre>
  *
- * Protobuf type {@code broker.BrokeredResultStatus}
+ * Protobuf type {@code broker.TcBrokeredResultStatus}
  */
-public final class BrokeredResultStatus extends
+public final class TcBrokeredResultStatus extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:broker.BrokeredResultStatus)
-    BrokeredResultStatusOrBuilder {
+    // @@protoc_insertion_point(message_implements:broker.TcBrokeredResultStatus)
+    TcBrokeredResultStatusOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use BrokeredResultStatus.newBuilder() to construct.
-  private BrokeredResultStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TcBrokeredResultStatus.newBuilder() to construct.
+  private TcBrokeredResultStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private BrokeredResultStatus() {
+  private TcBrokeredResultStatus() {
     statusText_ = "";
     stackTrace_ = "";
   }
@@ -29,20 +29,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new BrokeredResultStatus();
+    return new TcBrokeredResultStatus();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.grpc.BrokeredMessageProto.internal_static_broker_BrokeredResultStatus_descriptor;
+    return com.example.grpc.BrokeredMessageProto.internal_static_broker_TcBrokeredResultStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.grpc.BrokeredMessageProto.internal_static_broker_BrokeredResultStatus_fieldAccessorTable
+    return com.example.grpc.BrokeredMessageProto.internal_static_broker_TcBrokeredResultStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.grpc.BrokeredResultStatus.class, com.example.grpc.BrokeredResultStatus.Builder.class);
+            com.example.grpc.TcBrokeredResultStatus.class, com.example.grpc.TcBrokeredResultStatus.Builder.class);
   }
 
   public static final int HTTPSTATUSCODE_FIELD_NUMBER = 1;
@@ -186,10 +186,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.grpc.BrokeredResultStatus)) {
+    if (!(obj instanceof com.example.grpc.TcBrokeredResultStatus)) {
       return super.equals(obj);
     }
-    com.example.grpc.BrokeredResultStatus other = (com.example.grpc.BrokeredResultStatus) obj;
+    com.example.grpc.TcBrokeredResultStatus other = (com.example.grpc.TcBrokeredResultStatus) obj;
 
     if (getHttpStatusCode()
         != other.getHttpStatusCode()) return false;
@@ -219,44 +219,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(byte[] data)
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(java.io.InputStream input)
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,26 +264,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.example.grpc.BrokeredResultStatus parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.grpc.TcBrokeredResultStatus parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.example.grpc.BrokeredResultStatus parseDelimitedFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.grpc.BrokeredResultStatus parseFrom(
+  public static com.example.grpc.TcBrokeredResultStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.grpc.BrokeredResultStatus prototype) {
+  public static Builder newBuilder(com.example.grpc.TcBrokeredResultStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -316,26 +316,26 @@ private static final long serialVersionUID = 0L;
    * Status model
    * </pre>
    *
-   * Protobuf type {@code broker.BrokeredResultStatus}
+   * Protobuf type {@code broker.TcBrokeredResultStatus}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:broker.BrokeredResultStatus)
-      com.example.grpc.BrokeredResultStatusOrBuilder {
+      // @@protoc_insertion_point(builder_implements:broker.TcBrokeredResultStatus)
+      com.example.grpc.TcBrokeredResultStatusOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.grpc.BrokeredMessageProto.internal_static_broker_BrokeredResultStatus_descriptor;
+      return com.example.grpc.BrokeredMessageProto.internal_static_broker_TcBrokeredResultStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.grpc.BrokeredMessageProto.internal_static_broker_BrokeredResultStatus_fieldAccessorTable
+      return com.example.grpc.BrokeredMessageProto.internal_static_broker_TcBrokeredResultStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.grpc.BrokeredResultStatus.class, com.example.grpc.BrokeredResultStatus.Builder.class);
+              com.example.grpc.TcBrokeredResultStatus.class, com.example.grpc.TcBrokeredResultStatus.Builder.class);
     }
 
-    // Construct using com.example.grpc.BrokeredResultStatus.newBuilder()
+    // Construct using com.example.grpc.TcBrokeredResultStatus.newBuilder()
     private Builder() {
 
     }
@@ -358,17 +358,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.grpc.BrokeredMessageProto.internal_static_broker_BrokeredResultStatus_descriptor;
+      return com.example.grpc.BrokeredMessageProto.internal_static_broker_TcBrokeredResultStatus_descriptor;
     }
 
     @java.lang.Override
-    public com.example.grpc.BrokeredResultStatus getDefaultInstanceForType() {
-      return com.example.grpc.BrokeredResultStatus.getDefaultInstance();
+    public com.example.grpc.TcBrokeredResultStatus getDefaultInstanceForType() {
+      return com.example.grpc.TcBrokeredResultStatus.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.example.grpc.BrokeredResultStatus build() {
-      com.example.grpc.BrokeredResultStatus result = buildPartial();
+    public com.example.grpc.TcBrokeredResultStatus build() {
+      com.example.grpc.TcBrokeredResultStatus result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -376,14 +376,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.example.grpc.BrokeredResultStatus buildPartial() {
-      com.example.grpc.BrokeredResultStatus result = new com.example.grpc.BrokeredResultStatus(this);
+    public com.example.grpc.TcBrokeredResultStatus buildPartial() {
+      com.example.grpc.TcBrokeredResultStatus result = new com.example.grpc.TcBrokeredResultStatus(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.example.grpc.BrokeredResultStatus result) {
+    private void buildPartial0(com.example.grpc.TcBrokeredResultStatus result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.httpStatusCode_ = httpStatusCode_;
@@ -430,16 +430,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.grpc.BrokeredResultStatus) {
-        return mergeFrom((com.example.grpc.BrokeredResultStatus)other);
+      if (other instanceof com.example.grpc.TcBrokeredResultStatus) {
+        return mergeFrom((com.example.grpc.TcBrokeredResultStatus)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.grpc.BrokeredResultStatus other) {
-      if (other == com.example.grpc.BrokeredResultStatus.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.example.grpc.TcBrokeredResultStatus other) {
+      if (other == com.example.grpc.TcBrokeredResultStatus.getDefaultInstance()) return this;
       if (other.getHttpStatusCode() != 0) {
         setHttpStatusCode(other.getHttpStatusCode());
       }
@@ -699,23 +699,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:broker.BrokeredResultStatus)
+    // @@protoc_insertion_point(builder_scope:broker.TcBrokeredResultStatus)
   }
 
-  // @@protoc_insertion_point(class_scope:broker.BrokeredResultStatus)
-  private static final com.example.grpc.BrokeredResultStatus DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:broker.TcBrokeredResultStatus)
+  private static final com.example.grpc.TcBrokeredResultStatus DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.grpc.BrokeredResultStatus();
+    DEFAULT_INSTANCE = new com.example.grpc.TcBrokeredResultStatus();
   }
 
-  public static com.example.grpc.BrokeredResultStatus getDefaultInstance() {
+  public static com.example.grpc.TcBrokeredResultStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BrokeredResultStatus>
-      PARSER = new com.google.protobuf.AbstractParser<BrokeredResultStatus>() {
+  private static final com.google.protobuf.Parser<TcBrokeredResultStatus>
+      PARSER = new com.google.protobuf.AbstractParser<TcBrokeredResultStatus>() {
     @java.lang.Override
-    public BrokeredResultStatus parsePartialFrom(
+    public TcBrokeredResultStatus parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -734,17 +734,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<BrokeredResultStatus> parser() {
+  public static com.google.protobuf.Parser<TcBrokeredResultStatus> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<BrokeredResultStatus> getParserForType() {
+  public com.google.protobuf.Parser<TcBrokeredResultStatus> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.example.grpc.BrokeredResultStatus getDefaultInstanceForType() {
+  public com.example.grpc.TcBrokeredResultStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package broker;
+
+option java_package = "com.example.grpc";
+option java_multiple_files = true;
+option java_outer_classname = "CreateWorkItemCommandProto";
+
+// Import the updated base command definition
+import "brokered_message.proto";
+
+message CreateWorkItemCommand {
+  TcBrokeredBaseCommand base = 1;
+
+  string title = 2;
+  string description = 3;
+  string type = 4;
+  string priority = 5;
+}

@@ -4,7 +4,7 @@
 
   <groupId>com.example</groupId>
   <artifactId>grpc-second-demo</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.12</version>
   <packaging>jar</packaging>
 
   <name>grpc-second-demo</name>

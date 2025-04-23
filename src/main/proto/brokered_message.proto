@@ -7,7 +7,7 @@ option java_multiple_files = true;
 option java_outer_classname = "BrokeredMessageProto";
 
 // Base message
-message BrokeredBaseMessage {
+message TcBrokeredBaseMessage {
   string correlationId = 1;
   string tenantId = 2;
   string tcUserId = 3;
@@ -15,8 +15,8 @@ message BrokeredBaseMessage {
 }
 
 // Command extends base message
-message BrokeredBaseCommand {
-  BrokeredBaseMessage base = 1;
+message TcBrokeredBaseCommand {
+  TcBrokeredBaseMessage base = 1;
 
   string tcSessionId = 2;
   string eventHubPartitionIds = 3;
@@ -26,15 +26,15 @@ message BrokeredBaseCommand {
 }
 
 // Response extends base message
-message BrokeredBaseResponse {
-  BrokeredBaseMessage base = 1;
+message TcBrokeredBaseResponse {
+  TcBrokeredBaseMessage base = 1;
 
-  BrokeredResultStatus resultStatus = 2;
+  TcBrokeredResultStatus resultStatus = 2;
   string locale = 3;
 }
 
 // Status model
-message BrokeredResultStatus {
+message TcBrokeredResultStatus {
   int32 httpStatusCode = 1;
   string statusText = 2;
   string stackTrace = 3;

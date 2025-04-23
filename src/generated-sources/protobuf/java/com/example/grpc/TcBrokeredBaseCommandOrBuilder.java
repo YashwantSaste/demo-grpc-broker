@@ -4,24 +4,24 @@
 // Protobuf Java Version: 3.25.1
 package com.example.grpc;
 
-public interface BrokeredBaseCommandOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:broker.BrokeredBaseCommand)
+public interface TcBrokeredBaseCommandOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:broker.TcBrokeredBaseCommand)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.broker.BrokeredBaseMessage base = 1;</code>
+   * <code>.broker.TcBrokeredBaseMessage base = 1;</code>
    * @return Whether the base field is set.
    */
   boolean hasBase();
   /**
-   * <code>.broker.BrokeredBaseMessage base = 1;</code>
+   * <code>.broker.TcBrokeredBaseMessage base = 1;</code>
    * @return The base.
    */
-  com.example.grpc.BrokeredBaseMessage getBase();
+  com.example.grpc.TcBrokeredBaseMessage getBase();
   /**
-   * <code>.broker.BrokeredBaseMessage base = 1;</code>
+   * <code>.broker.TcBrokeredBaseMessage base = 1;</code>
    */
-  com.example.grpc.BrokeredBaseMessageOrBuilder getBaseOrBuilder();
+  com.example.grpc.TcBrokeredBaseMessageOrBuilder getBaseOrBuilder();
 
   /**
    * <code>string tcSessionId = 2;</code>
